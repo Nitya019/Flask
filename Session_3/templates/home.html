@@ -1,0 +1,17 @@
+{% extends "layout.html"%}
+
+
+{%block content%}  <!--content is just a variable-->
+<h3>Content:</h3>
+<ul>
+    <li>Home</li>
+    <li><a href="{{url_for('about')}}" target = "_blank">About</a></li> <!--url_for is used to redirect to "about" page. If you want to open about page in a new tab, use target = "_blank"-->
+    <li><a href="{{url_for('employees')}}" target = "_blank">Employees</a></li> <!--url_for is used to redirect to "about" page. If you want to open about page in a new tab, use target = "_blank"-->
+    <ul>
+        <li><a href = "{{url_for('managers')}}" target = "_blank">Managers</a></li>
+    </ul>
+    <li>Careers</li>
+    <li>Contact us</li>
+
+</ul>
+{% endblock content%}

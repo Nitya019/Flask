@@ -1,0 +1,30 @@
+{%extends "layout.html"%}
+
+
+{% block content %}
+{% for emp_id, emp_data in emps.items() %} <!--employees.items() contains the tuple of key and value -->
+   {%if emp_data['designation'].lower() == "manager"%}
+        <div>
+            <table>
+                <tr>
+                    <td>ID:</td>
+                    <td>{{ emp_id }}</td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{ emp_data["name"] }}</td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td>{{ emp_data['age'] }}</td>
+                </tr>
+                <tr>
+                    <td>Position:</td>
+                    <td>{{ emp_data['designation'] }}</td>
+                </tr>
+            </table>
+        </div>
+        <br>
+    {%endif%}
+{% endfor %}
+{% endblock content%}
